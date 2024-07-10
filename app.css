@@ -1,0 +1,177 @@
+body {
+    background: #000;
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  #game {
+   
+        position: relative;
+        margin: 0 auto;
+        overflow: hidden;
+        background: #000;
+        user-select: none;
+        border: 4px solid #fff;
+        box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+        width: 1000px;
+        height: 650px;  
+      
+  }
+  
+  .topUI {
+    position: absolute;
+    z-index: 1000;
+    letter-spacing: 2px;
+    color: #fff;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px 12px;
+    border: 2px solid #fff;
+    text-shadow: 2px 2px #000;
+  }
+  
+  #time {
+    left: 1%;
+    top: 20px;
+  }
+  #time::before {
+    content: "TIME ";
+    color: #ff0;
+  }
+  
+  #score {
+    left: 50%;
+    right: 20px;
+    top: 20px;
+  }
+  #score::before {
+    content: "SCORE ";
+    color: #f0f;
+  }
+  
+  #lap {
+    left: 35%;
+    transform: translateX(-50%);
+    top: 20px;
+  }
+  #lap::before {
+    content: "LAP ";
+    color: #0ff;
+  }
+  
+  #tacho {
+    position: absolute;
+    text-align: right;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    color: #f00;
+    text-shadow: 2px 2px #000;
+    letter-spacing: 2px;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px 12px;
+    border: 2px solid #fff;
+  }
+  #tacho::after {
+    content: " KM/H";
+    color: #ff0;
+    font-size: 16px;
+    margin-left: 5px;
+  }
+  
+  #road {
+    transition: opacity 1s;
+    transition-timing-function: steps(8, end);
+  }
+  
+  #road * {
+    position: absolute;
+    image-rendering: pixelated;
+  }
+  
+  #hero {
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2000;
+    transform: scale(1.2);
+    image-rendering: pixelated;
+  }
+  
+  #cloud {
+    background-size: auto 100%;
+    width: 100%;
+    height: 57%;
+    opacity: 0.7;
+  }
+  
+  #home {
+    position: absolute;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  #highscore {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    border-top: 2px solid #fff;
+  }
+  
+  #highscore * {
+    color: #0f0;
+    margin: 0 0 6px 27px;
+    text-shadow: 1px 1px #000;
+  }
+  
+  h1 {
+    font-size: 48px;
+    text-align: center;
+    margin-top: 250px;
+    margin-bottom: 30px;
+    color: #f0f;
+    text-shadow: 3px 3px #00f, -3px -3px #f00;
+  }
+  
+  #text {
+    font-size: 24px;
+    color: #0f0;
+    text-shadow: 2px 2px #000;
+    text-align: center;
+  }
+  
+  .blink {
+    animation: blinker 1s steps(2, end) infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  #game::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+  }
